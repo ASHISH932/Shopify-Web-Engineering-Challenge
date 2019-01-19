@@ -2,10 +2,10 @@ import React from 'react';
 import injectSheet from 'react-jss';
 
 // export const DataListContainer = (props) => {
-export const WasteElement = ({ classes, waste }) => (
+export const WasteElement = ({ classes, waste, onClick }) => (
     <div className={classes.main}>
         <p className={waste.favourite ? classes.favourite : classes.normal}>
-            <i className="fa fa-star" aria-hidden="true"></i>
+            <i className="fa fa-star" aria-hidden="true" onClick={e => onClick(e)}></i>
             {waste.title}
         </p>
         <div className={classes.list}  dangerouslySetInnerHTML={{__html: waste.body }} />
@@ -24,7 +24,8 @@ const styles = {
     },
     normal: {
         '& i':{
-            color: '#aaa'
+            color: '#aaa',
+            paddingRight: '6px'
         }
     },
     list: {

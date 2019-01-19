@@ -1,38 +1,53 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import { compose } from 'recompose';
+import { connect } from 'react-redux';
+
+// Components
 import Header from './header';
 import Search from './search';
 import WasteElement from './WasteElement'
 
-const waste = {
-    body: "<ul><li>Place item in the <strong>Garbage Bin.</strong></li><li>Place item in the <strong>Garbage Bin.</strong></li></ul>",
-    title: "Garbage (wrapping and typing)",
-    favourite: true, 
-}
-const wasteList = [];
+// Selectors and actions
+import { startSearch, updateSearchList } from "../actions/searchList";
+import { addToFavourites, removeFavourite } from "../actions/favourites";
+import searchListSelector from '../selectors/searchListSelector';
 
-export const MainPage = (props) => {
-    const { classes } = props;
-    return (
-        <div>
-            <Header>
-                Toronto Waste Lookup
-            </Header>
-            <Search />
-            <div className = {classes.waste}>
-                <WasteElement waste={waste} />
-                <WasteElement waste={waste} />
-                <WasteElement waste={waste} />
-                <WasteElement waste={waste} />
+export class MainPage extends Component {
+    
+    handleFavouriteClick(waste) {
+        waste.favourite ? this.props.removeFavourite(waste.id) : this.props.addToFavourites(waste);
+    }
+
+    render() {
+        const { classes, favourites, startSearch, updateSearchList, searchList } = this.props;
+        return (
+            <div>
+                <Header>
+                    Toronto Waste Lookup
+                </Header>
+                <Search
+                onSearch={item => startSearch(item)}
+                onInputCleared={() => updateSearchList()}
+                />
+                <div className = {classes.waste}>
+                    {searchList.map(w => <WasteElement key={w.id} waste={w} onClick={() => this.handleFavouriteClick(w)}/>)}
+                </div>
+                {
+                    favourites.length !== 0 ? 
+                    <div className = {classes.favourite} >
+                        <h3 className={classes.textHeader}> Favourite </h3>
+                        {favourites.map(w => <WasteElement key={w.id} waste={w} onClick={() => this.handleFavouriteClick(w)}/>)}
+                    </div>
+                    :
+                    false
+                }
             </div>
-            <div className = {classes.favourite} >
-                <h3 className={classes.textHeader}> Favourite </h3>
-                <WasteElement waste={waste} />
-            </div>
-        </div>
-    );
+        );
+    }
 };
 
+// <WasteElement waste={searchList[0]} onClick={elem => console.log(searchList[0])}/>
 
 const styles = {
     waste: {
@@ -45,35 +60,23 @@ const styles = {
     textHeader: {
         fontWeight: 'bold',
         color: '#41a570'
-    },
-    header: {
-        width: '100%',
-        height: '15%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: 'linear-gradient(to right, #1d5c91 0%, #229261 100%);',
-        color: 'white'
-    },
-    main: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        height: '85%',
-        lineHeight: '25px',
-        fontFamily: 'Helvetica, Arial, Lucida Grande, sans-serif',
-    },
-    list: {
-        backgroundColor: '#EEE',
-    },
-    center: {
-        width: '95%',
-        marginTop: '5%',
-        marginLeft: '5%',
-        marginRight: '0%',
-    },
-    gap: {
-        height: '5%',
     }
 };
 
-export default injectSheet(styles)(MainPage);
+
+const mapStateToProps = ({ searchList, favourites }) => ({
+    favourites,
+    searchList: searchListSelector(searchList, favourites),
+});
+
+const mapDispatchToProps = dispatch => ({
+    startSearch: item => dispatch(startSearch(item)),
+    updateSearchList: () => dispatch(updateSearchList([])),
+    addToFavourites: waste => dispatch(addToFavourites(waste)),
+    removeFavourite: id => dispatch(removeFavourite(id))
+});
+
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    injectSheet(styles),
+)(MainPage);

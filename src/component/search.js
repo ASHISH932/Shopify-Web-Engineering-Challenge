@@ -10,7 +10,7 @@ export class Search extends Component {
         e.preventDefault();
         const val = this.state.input;
         if (val.length > 0) {
-            // this.props.onSearch(val);
+            this.props.onSearch(val);
         }
     };
     handleChange = (e) => {
@@ -20,7 +20,7 @@ export class Search extends Component {
                 input: a
             })
         } else {
-            // this.props.onInputCleared();
+            this.props.onInputCleared();
         }
     };
     handleKeyDown = (e) => {
@@ -33,7 +33,7 @@ export class Search extends Component {
         return (
             <div className={classes.main}>
                 <input type="text" className={classes.text} placeholder="Search" onKeyDown={this.handleKeyDown} onChange={this.handleChange}/>
-                <button id="searchButton" className={classes.button} aria-pressed="true">
+                <button id="searchButton" onClick={this.handleClick} className={classes.button} aria-pressed="true">
                     <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
             </div>
