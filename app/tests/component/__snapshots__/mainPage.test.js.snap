@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MainPage component correctly 1`] = `
+<div>
+  <Jss(Header)>
+    Toronto Waste Lookup
+  </Jss(Header)>
+  <Jss(Search)
+    onInputCleared={[Function]}
+    onSearch={[Function]}
+  />
+  <div>
+    <Jss(WasteElement)
+      key="0"
+      onClick={[Function]}
+      waste={
+        Object {
+          "body": "<ul><li>Place item in the <strong>Garbage Bin.</strong></li><li>Place item in the <strong>Garbage Bin.</strong></li></ul>",
+          "favourite": false,
+          "id": 0,
+          "title": "Garbage (wrapping and typing)",
+        }
+      }
+    />
+    <Jss(WasteElement)
+      key="1"
+      onClick={[Function]}
+      waste={
+        Object {
+          "body": "<ul><li>Place item in the <strong>Garbage Bin.</strong></li><li>Place item in the <strong>Garbage Bin.</strong></li></ul>",
+          "favourite": true,
+          "id": 1,
+          "title": "Garbage (wrapping and typing)",
+        }
+      }
+    />
+    <Jss(WasteElement)
+      key="2"
+      onClick={[Function]}
+      waste={
+        Object {
+          "body": "<ul><li>Place item in the <strong>Garbage Bin.</strong></li><li>Place item in the <strong>Garbage Bin.</strong></li></ul>",
+          "favourite": false,
+          "id": 2,
+          "title": "Garbage (wrapping and typing)",
+        }
+      }
+    />
+    <Jss(WasteElement)
+      key="3"
+      onClick={[Function]}
+      waste={
+        Object {
+          "body": "<ul><li>Place item in the <strong>Garbage Bin.</strong></li><li>Place item in the <strong>Garbage Bin.</strong></li></ul>",
+          "favourite": false,
+          "id": 3,
+          "title": "Garbage (wrapping and typing)",
+        }
+      }
+    />
+  </div>
+  <div>
+    <h3>
+       Favourite 
+    </h3>
+    <Jss(WasteElement)
+      key="1"
+      onClick={[Function]}
+      waste={
+        Object {
+          "body": "<ul><li>Place item in the <strong>Garbage Bin.</strong></li><li>Place item in the <strong>Garbage Bin.</strong></li></ul>",
+          "favourite": true,
+          "id": 1,
+          "title": "Garbage (wrapping and typing)",
+        }
+      }
+    />
+  </div>
+</div>
+`;

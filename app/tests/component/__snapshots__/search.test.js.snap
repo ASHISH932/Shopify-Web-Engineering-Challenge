@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Search component correctly 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    placeholder="Search"
+    type="text"
+  />
+  <button
+    aria-pressed="true"
+    id="searchButton"
+    onClick={[Function]}
+  >
+    <i
+      aria-hidden="true"
+      className="fa fa-search"
+    />
+  </button>
+</div>
+`;

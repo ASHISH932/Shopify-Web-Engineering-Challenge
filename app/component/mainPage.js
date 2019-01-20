@@ -47,8 +47,6 @@ export class MainPage extends Component {
     }
 };
 
-// <WasteElement waste={searchList[0]} onClick={elem => console.log(searchList[0])}/>
-
 const styles = {
     waste: {
         padding: '0 2%'
