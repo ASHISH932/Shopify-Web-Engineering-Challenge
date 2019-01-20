@@ -12,8 +12,7 @@ export const Header = (props) => {
 
 const styles = {
     header: {
-        width: '100%',
-        height: '15%',
+        height: '125px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

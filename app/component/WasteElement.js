@@ -3,6 +3,14 @@ import injectSheet from 'react-jss';
 import ReactHtmlParser from 'react-html-parser';
 
 // export const DataListContainer = (props) => {
+const parseHTML = (body) => {
+    body = ReactHtmlParser(body) + "";
+    if (!body.includes('<li>') || !body.includes('<ul>')) {
+        body = `<ul><li>${body}</li></ul>`
+    }
+    console.log(body)
+    return body;
+}
 export const WasteElement = ({ classes, waste, onClick }) => (
     <div className={classes.main}>
         <p className={waste.favourite ? classes.favourite : classes.normal}>
@@ -11,10 +19,10 @@ export const WasteElement = ({ classes, waste, onClick }) => (
         </p>
         <div
         className={classes.list}
-        dangerouslySetInnerHTML={{__html: ReactHtmlParser(waste.body) }}
+        dangerouslySetInnerHTML={{__html: parseHTML(waste.body) }}
         />
     </div>);
-
+    
 const styles = {
     main: {
         display: 'grid',

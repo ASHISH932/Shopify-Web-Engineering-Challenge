@@ -36,7 +36,7 @@ export class MainPage extends Component {
                 {
                     favourites.length !== 0 ? 
                     <div className = {classes.favourite} >
-                        <h3 className={classes.textHeader}> Favourite </h3>
+                        <h2 className={classes.textHeader}> Favourite </h2>
                         {favourites.map(w => <WasteElement key={w.id} waste={w} onClick={() => this.handleFavouriteClick(w)}/>)}
                     </div>
                     :
@@ -57,7 +57,8 @@ const styles = {
     },
     textHeader: {
         fontWeight: 'bold',
-        color: '#41a570'
+        color: '#41a570',
+        paddingTop: '20px'
     }
 };
 
