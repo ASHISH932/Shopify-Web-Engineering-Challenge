@@ -3,5 +3,5 @@ const waste = {
     title: "Garbage (wrapping and typing)",
     favourite: false, 
 }
-export default [{... waste, id: 0},{... waste, id: 1},{... waste, id: 2},{... waste, id: 3}];    
+export default [{ ...waste, id: 0},{ ...waste, id: 1},{ ...waste, id: 2},{ ...waste, id: 3}];    
     

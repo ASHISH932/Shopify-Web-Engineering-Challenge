@@ -1,4 +1,4 @@
-export default (searchList, favourites) => {
+export default (searchList = [], favourites = []) => {
     return searchList.map(sl => {
         const exist = favourites.find( waste => waste.id === sl.id );
         if(exist) {
