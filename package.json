@@ -6,21 +6,24 @@
   "scripts": {
     "build": "webpack --watch --mode development",
     "prod": "webpack --mode production",
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+    "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "express": "^4.16.3",
-    "file-loader": "^3.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
     "path": "^0.12.7",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-html-parser": "^2.0.2",
     "react-jss": "^8.6.1",
     "react-redux": "^6.0.0",
     "recompose": "^0.30.0",

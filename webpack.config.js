@@ -1,7 +1,7 @@
 module.exports = {
     entry: [
         '@babel/polyfill',
-        './src/app.js',
+        './app/app.js',
     ],
     module: {
         rules: [
@@ -11,18 +11,6 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            },
-            {
-                test: /\.(jpg|png|gif|svg|pdf|ico)$/,
-                use: [
-                    {
-                    loader: 'file-loader',
-                    options: {
-                        name: './images/[name].[ext]',
-                        outputPath: './',
-                    },
-                    },
-                ],
             }
         ]
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import injectSheet from 'react-jss';
+import ReactHtmlParser from 'react-html-parser';
 
 // export const DataListContainer = (props) => {
 export const WasteElement = ({ classes, waste, onClick }) => (
@@ -8,13 +9,16 @@ export const WasteElement = ({ classes, waste, onClick }) => (
             <i className="fa fa-star" aria-hidden="true" onClick={e => onClick(e)}></i>
             {waste.title}
         </p>
-        <div className={classes.list}  dangerouslySetInnerHTML={{__html: waste.body }} />
+        <div
+        className={classes.list}
+        dangerouslySetInnerHTML={{__html: ReactHtmlParser(waste.body) }}
+        />
     </div>);
 
 const styles = {
     main: {
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr'
+        gridTemplateColumns: '1fr 2fr'
     },
     favourite: {
         '& i':{

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
-import logo from '../assets/favicon.ico'
 
 export class Search extends Component {
     state = {
