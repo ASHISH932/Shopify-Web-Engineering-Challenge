@@ -42,35 +42,28 @@ export class Search extends Component {
 
 const styles = {
     main: {
-        margin: '20px',
-        display: 'flex',
-        alignContent: 'strech',
-        height: '70px',
-        marginRight: '20px',
-        paddingBottom: '20px'
+        margin: 'auto',
+        display: 'grid',
+        gridTemplateColumns: '15fr 1fr',
+        gridGap: '10px',
+        padding: '0 2%'
     },
     text: {
-        minWidth: '0px',
-        padding: '20px',
-        fontSize: '25px',
-        border: '1px solid grey',
-        background: '#ffffff',
-        borderRadius: '3px',
-        flex: '1 1 auto'
+        height: 49,
+        margin: '4px 2px',
+        padding: '8px',
+        boxSizing: 'border-box',
+        borderRadius: '4px',
+        fontSize: '16px'
     },
     button: {
-        width: '70px',
-        height: '70px',
-        minWidth: '70px',
-        marginWight: '40px',
-        marginLeft: '20px',
-        background: '#23975e',
-        color: '#ffffff',
-        cursor: 'pointer',
-        border: 'none',
+        color: 'white',
         borderRadius: '4px',
-        boxShadow: '0 3px 2.5px -2.5px gray',
-        flex: '0 1 70px'
+        fontSize: '25px',
+        margin: '4px 2px',
+        cursor: 'pointer',
+        backgroundColor:  '#229261 !important',
+        border: '1px solid  #229261',
     },
     "search:before" :{
         content: "\f00e"
