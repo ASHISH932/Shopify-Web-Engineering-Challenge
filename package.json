@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --watch --mode development",
     "prod": "webpack --mode production",
-    "start": "node server.js"
+    "start:dev": "node server.js",
+    "start": "webpack --mode production && node server.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
