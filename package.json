@@ -7,7 +7,8 @@
     "build": "webpack --watch --mode development",
     "prod": "webpack --mode production",
     "start:dev": "node server.js",
-    "start": "webpack --mode production && node server.js"
+    "start": "webpack --mode production && node server.js",
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
@@ -19,7 +20,12 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
     "express": "^4.16.4",
+    "jest": "^23.6.0",
     "lodash": "^4.17.11",
     "path": "^0.12.7",
     "react": "^16.4.2",
