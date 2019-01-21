@@ -13,6 +13,7 @@ import WasteElement from './WasteElement'
 import { startSearch, updateSearchList } from "../actions/searchList";
 import { addToFavourites, removeFavourite } from "../actions/favourites";
 import searchListSelector from '../selectors/searchListSelector';
+import SnackBar from './snackbar';
 
 export class MainPage extends Component {
     
@@ -21,9 +22,12 @@ export class MainPage extends Component {
     }
 
     render() {
-        const { classes, favourites, startSearch, updateSearchList, searchList } = this.props;
+        const { classes, favourites, startSearch, updateSearchList, searchList, loadState } = this.props;
         return (
             <div>
+                <SnackBar show={loadState} timer={6000}>
+                  <p>Loading...</p>
+                </SnackBar>
                 <Header>
                     Toronto Waste Lookup
                 </Header>
@@ -64,9 +68,10 @@ const styles = {
 };
 
 
-const mapStateToProps = ({ searchList, favourites }) => ({
+const mapStateToProps = ({ searchList, favourites, loadState }) => ({
     favourites,
     searchList: searchListSelector(searchList, favourites),
+    loadState,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -78,8 +83,8 @@ const mapDispatchToProps = dispatch => ({
 
 MainPage.propTypes = {
     classes: PropTypes.object.isRequired,
-    favourites: PropTypes.object,
-    searchList: PropTypes.object,
+    favourites: PropTypes.array,
+    searchList: PropTypes.array,
     startSearch: PropTypes.func.isRequired,
     updateSearchList: PropTypes.func.isRequired,
     addToFavourites: PropTypes.func.isRequired,

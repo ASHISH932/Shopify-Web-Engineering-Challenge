@@ -25,7 +25,7 @@ const styles = {
 
 Header.propTypes = {
     classes: PropTypes.object.isRequired,
-    children: PropTypes.object,
+    children: PropTypes.string || PropTypes.object,
 };
 
 export default injectSheet(styles)(Header);

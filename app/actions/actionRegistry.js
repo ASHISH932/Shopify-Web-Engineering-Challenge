@@ -8,4 +8,8 @@ const searchListActionTypes = {
   UPDATE_SEARCH_LIST: 'UPDATE_SEARCH_LIST',
 };
 
-export default { ...favouritesActionTypes, ...searchListActionTypes }
+const loadStateActionType = {
+  UPDATE_LOADING_STATE: 'UPDATE_LOADING_STATE'
+}
+
+export default { ...favouritesActionTypes, ...searchListActionTypes, ...loadStateActionType }

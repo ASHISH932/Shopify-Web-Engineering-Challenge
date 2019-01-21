@@ -48,7 +48,7 @@ const styles = {
     }
 }
 
-MainPage.propTypes = {
+WasteElement.propTypes = {
     classes: PropTypes.object.isRequired,
     waste: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
