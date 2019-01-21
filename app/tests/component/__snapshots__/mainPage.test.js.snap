@@ -2,6 +2,14 @@
 
 exports[`should render MainPage component correctly 1`] = `
 <div>
+  <SnackBar
+    show={false}
+    timer={6000}
+  >
+    <p>
+      Loading...
+    </p>
+  </SnackBar>
   <Jss(Header)>
     Toronto Waste Lookup
   </Jss(Header)>
@@ -60,9 +68,9 @@ exports[`should render MainPage component correctly 1`] = `
     />
   </div>
   <div>
-    <h3>
+    <h2>
        Favourite 
-    </h3>
+    </h2>
     <Jss(WasteElement)
       key="1"
       onClick={[Function]}

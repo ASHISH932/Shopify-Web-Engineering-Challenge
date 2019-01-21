@@ -13,22 +13,7 @@ exports[`should render WasteElement component correctly 1`] = `
   <div
     dangerouslySetInnerHTML={
       Object {
-        "__html": Array [
-          <ul>
-            <li>
-              Place item in the 
-              <strong>
-                Garbage Bin.
-              </strong>
-            </li>
-            <li>
-              Place item in the 
-              <strong>
-                Garbage Bin.
-              </strong>
-            </li>
-          </ul>,
-        ],
+        "__html": "<ul><li>[object Object]</li></ul>",
       }
     }
   />

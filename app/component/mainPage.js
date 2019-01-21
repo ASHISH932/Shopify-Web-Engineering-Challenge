@@ -25,7 +25,7 @@ export class MainPage extends Component {
         const { classes, favourites, startSearch, updateSearchList, searchList, loadState } = this.props;
         return (
             <div>
-                <SnackBar show={loadState} timer={6000}>
+                <SnackBar show={!!loadState} timer={6000}>
                   <p>Loading...</p>
                 </SnackBar>
                 <Header>

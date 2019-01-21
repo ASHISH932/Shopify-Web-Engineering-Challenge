@@ -9,7 +9,6 @@ const parseHTML = (body) => {
     if (!body.includes('<li>') || !body.includes('<ul>')) {
         body = `<ul><li>${body}</li></ul>`
     }
-    console.log(body)
     return body;
 }
 export const WasteElement = ({ classes, waste, onClick }) => (
