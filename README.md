@@ -25,6 +25,7 @@ The following **required** functionality is completed:
 
 <img src='https://i.imgur.com/sX63Qk1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
@@ -57,6 +58,9 @@ npm run test
 ```bash
 npm start
 ```
+
+## Architecture 
+<img src='https://i.imgur.com/NakvcA5.jpg' title='Video Walkthrough' width='' alt='App Architecture' />
 
 ## Test Cases
 
