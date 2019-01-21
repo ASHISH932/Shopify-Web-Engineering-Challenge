@@ -60,7 +60,7 @@ npm start
 ```
 
 ## Architecture 
-<img src='https://i.imgur.com/7a0kKY6.jpg' title='Video Walkthrough' width='' alt='App Architecture' />
+<div style="text-align:center"><img src='https://i.imgur.com/7a0kKY6.jpg' title='Video Walkthrough' width='' alt='App Architecture' /></div>
 
 ## Test Cases
 
