@@ -1,5 +1,6 @@
 import React from 'react';
 import injectSheet from 'react-jss';
+import PropTypes from 'prop-types';
 
 export const Header = (props) => {
     const { classes, children } = props;
@@ -21,5 +22,10 @@ const styles = {
         marginBottom: '30px'
     }
 }
+
+Header.propTypes = {
+    classes: PropTypes.object.isRequired,
+    children: PropTypes.object,
+};
 
 export default injectSheet(styles)(Header);

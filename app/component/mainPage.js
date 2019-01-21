@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { compose } from 'recompose';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 // Components
 import Header from './header';
@@ -74,6 +75,16 @@ const mapDispatchToProps = dispatch => ({
     addToFavourites: waste => dispatch(addToFavourites(waste)),
     removeFavourite: id => dispatch(removeFavourite(id))
 });
+
+MainPage.propTypes = {
+    classes: PropTypes.object.isRequired,
+    favourites: PropTypes.object,
+    searchList: PropTypes.object,
+    startSearch: PropTypes.func.isRequired,
+    updateSearchList: PropTypes.func.isRequired,
+    addToFavourites: PropTypes.func.isRequired,
+    removeFavourite: PropTypes.func.isRequired,
+};
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),

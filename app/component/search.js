@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import PropTypes from 'prop-types';
 
 export class Search extends Component {
     state = {
@@ -71,6 +72,13 @@ const styles = {
     "fa-search" : {
         fontSize: '48px'
     }
+};
+
+
+Search.propTypes = {
+    classes: PropTypes.object.isRequired,
+    onSearch: PropTypes.func.isRequired,
+    onInputCleared: PropTypes.func.isRequired,
 };
 
 export default injectSheet(styles)(Search);

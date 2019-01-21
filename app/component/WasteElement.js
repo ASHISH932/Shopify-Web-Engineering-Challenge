@@ -1,6 +1,7 @@
 import React from 'react';
 import injectSheet from 'react-jss';
 import ReactHtmlParser from 'react-html-parser';
+import PropTypes from 'prop-types';
 
 // export const DataListContainer = (props) => {
 const parseHTML = (body) => {
@@ -47,5 +48,10 @@ const styles = {
     }
 }
 
+MainPage.propTypes = {
+    classes: PropTypes.object.isRequired,
+    waste: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired,
+};
+
 export default injectSheet(styles)(WasteElement);
-// {!!props.header ? <h3>{props.header}</h3> : false}
